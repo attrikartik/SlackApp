@@ -1,0 +1,8 @@
+.Logout{
+    color: '#0CA761';
+    margin-left: '100px';
+}
+
+.Logout :hover{
+    cursor: pointer;
+}

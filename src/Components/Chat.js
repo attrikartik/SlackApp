@@ -93,7 +93,7 @@ export default function Chat(props) {
   const [activeChat, setActiveChat] = React.useState(null)
 
 
-  const  { logout, connectedUsers } =  props
+  const  { logout, connectedUsers, user } =  props
 
  console.log(connectedUsers)
   const handleDrawerOpen = () => {
@@ -142,6 +142,9 @@ export default function Chat(props) {
             <p style={{color: '#191970'}}>Chats</p>
           </IconButton>
         </div>
+        <div style={{display:'flex'}}>
+          <h3 style={{color: '#0CA761', marginLeft: '20px'}}>{props.user.name}</h3>       
+        </div>
         <Divider/>
         <List>
           { connectedUsers.length > 0 ? connectedUsers.map((user, index) => (
@@ -152,9 +155,8 @@ export default function Chat(props) {
           )) : null
         }
         </List>
-        <div>
-          <Button title='Logout' click={logout} color='#0CA761'/>
-        </div>
+       
+        <Button title='Logout' click={logout} color='#0CA761' fontSize='small'/>
     </Drawer>
       <main
         className={clsx(classes.content, {
